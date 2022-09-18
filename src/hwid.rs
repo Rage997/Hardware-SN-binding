@@ -1,7 +1,5 @@
 use std::process::Command;
 use std::string::String;
-// use std::io::{self, Write};
-
 
 #[cfg(target_os = "linux")]
 pub fn get_id()-> String {
@@ -60,24 +58,4 @@ pub fn get_id()-> String {
 			return id.to_string();
 		}
 	}
-		// 	if id.is_empty() {
-		// 		panic!("IOPlatformUUID not found")
-		// 	} else {
-		// 		Ok(id.unwrap().to_string())
-		// }
-		
-	// .output()
-	// .stdout;
-
-	// let out = String::from_utf8(cmd);
-	// let out = cmd.stdout;
-	// return s;
-
 }
-
-// }
-
-
-// pub fn get_id() -> std::string::String {
-// 	unimplemented!("*BSD support is not implemented")
-// }
