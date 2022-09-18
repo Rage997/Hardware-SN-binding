@@ -12,8 +12,7 @@ pub fn get_id()-> String {
 	// see: https://manpages.ubuntu.com/manpages/xenial/en/man1/systemd-machine-id-setup.1.html  
 
 	println!("You are running a Linux distribution. Retrieving /etc/machine-id file...!");
-	// let id_path = "/etc/machine-id";
-	let id_path = "/Users/niccolozuppichini/Desktop/machine-id";
+	let id_path = "/etc/machine-id";
 	// Open file
 	let id_contents = std::fs::read_to_string(id_path);
 	return id_contents.unwrap();
