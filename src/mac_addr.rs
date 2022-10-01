@@ -15,9 +15,10 @@ pub fn get() {
     assert!(output.status.success());
 	let tmp =  String::from_utf8(output.stdout)
 		.expect("Found invalid UTF-8");
+
 	match tmp
 		.lines()
-		.find(|l| l.contains("ether"))// find the line containing the UUID
+		.find(|l| l.contains("ether"))// TODO this only finds the first match
 		.unwrap_or("")
 		.split(' ')
 		.nth(1)
