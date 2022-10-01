@@ -7,8 +7,8 @@ use std::process::Command;
 pub fn get() {
     // On mac, you can get all the mac addresses by running /sbin/ifconfig | grep ether
     
-    
 	let output = Command::new("/sbin/ifconfig")
+    .args(["en0"])
 	.output()
 	.expect("Failed to retrieve hardware information");
 
@@ -22,10 +22,9 @@ pub fn get() {
 		.split(' ')
 		.nth(1)
 		{
-		None => panic!("IOPlatformUUID not found"),
+		None => panic!("No network interface found"),
 		Some(id) => {
-            println!(id);
-			return id.to_string();
+            println!("The MAC address is {}", id);
 		}
 	}    
 }
